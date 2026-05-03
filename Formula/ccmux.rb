@@ -5,24 +5,26 @@ class Ccmux < Formula
   desc "Control tmux sessions from your phone"
   homepage "https://ccmux.com"
   license "MIT"
-  version "0.1.1"
+  version "0.1.4"
 
   # Pre-compiled binaries — no Go required.
   # Update urls and sha256s after running scripts/make-release.sh.
   on_macos do
     on_arm do
-      url "https://github.com/Highwall2016/homebrew-tap/releases/download/v0.1.1/ccmux-0.1.1-darwin-arm64.tar.gz"
-      sha256 "49d4b7d959db733eaa88c499531c9eb0aaa36e068b28db28fecd6845235e11e1"
+      url "https://github.com/Highwall2016/homebrew-tap/releases/download/v0.1.4/ccmux-0.1.4-darwin-arm64.tar.gz"
+      sha256 "95f096b7cac9bd088641798975edbffc0dc4758a851b6e52cf57c6c00ef76d3f"
     end
     on_intel do
-      url "https://github.com/Highwall2016/homebrew-tap/releases/download/v0.1.1/ccmux-0.1.1-darwin-amd64.tar.gz"
-      sha256 "85c6a348cec8cc79ea3615f17dc3012152ee035314deb26496f2bf86299b57da"
+      url "https://github.com/Highwall2016/homebrew-tap/releases/download/v0.1.4/ccmux-0.1.4-darwin-amd64.tar.gz"
+      sha256 "0eec56aaf82de350ce74fa8424229d2ed5604d0df04dae29f3698505b8e13dc1"
     end
   end
 
   def install
     bin.install "ccmux"
     bin.install "ccmux-agent"
+    (etc/"ccmux").mkpath
+    (etc/"ccmux").install ".env.agent"
   end
 
   # ccmux-agent runs in the background and streams your terminal sessions to
