@@ -4,34 +4,25 @@
 class Ccmux < Formula
   desc "Control tmux sessions from your phone"
   homepage "https://ccmux.com"
-  # Update url and sha256 after running scripts/make-release.sh
-  url "https://github.com/Highwall2016/homebrew-tap/releases/download/v0.1.0/ccmux-0.1.0.tar.gz"
-  sha256 "de39c33dc22acbb54855cd2708b2ad84c7f9e5a121f41ff2a0169f3b4d91f74f"
   license "MIT"
+  version "0.1.1"
 
-  depends_on "go" => :build
-
-  # The source tarball is created by scripts/make-release.sh and contains a
-  # pre-built vendor/ directory so builds are fully offline.
-  def install
-    # Disable go.work (present at repo root) so -mod=vendor works at the
-    # module level and picks up agent/vendor/ which includes the vendored
-    # backend package (via the replace directive resolved at vendor time).
-    ENV["GOWORK"] = "off"
-    cd "agent" do
-      system "go", "build",
-             "-trimpath",
-             "-ldflags", "-s -w",
-             "-mod=vendor",
-             "-o", bin/"ccmux",
-             "./cmd/ctl"
-      system "go", "build",
-             "-trimpath",
-             "-ldflags", "-s -w",
-             "-mod=vendor",
-             "-o", bin/"ccmux-agent",
-             "./cmd/agent"
+  # Pre-compiled binaries — no Go required.
+  # Update urls and sha256s after running scripts/make-release.sh.
+  on_macos do
+    on_arm do
+      url "https://github.com/Highwall2016/homebrew-tap/releases/download/v0.1.1/ccmux-0.1.1-darwin-arm64.tar.gz"
+      sha256 "49d4b7d959db733eaa88c499531c9eb0aaa36e068b28db28fecd6845235e11e1"
     end
+    on_intel do
+      url "https://github.com/Highwall2016/homebrew-tap/releases/download/v0.1.1/ccmux-0.1.1-darwin-amd64.tar.gz"
+      sha256 "85c6a348cec8cc79ea3615f17dc3012152ee035314deb26496f2bf86299b57da"
+    end
+  end
+
+  def install
+    bin.install "ccmux"
+    bin.install "ccmux-agent"
   end
 
   # ccmux-agent runs in the background and streams your terminal sessions to
@@ -67,7 +58,6 @@ class Ccmux < Formula
   end
 
   test do
-    # ccmux exits 1 with usage on --help, match the banner
     output = shell_output("#{bin}/ccmux --help 2>&1", 1)
     assert_match "control tmux sessions from your phone", output
   end
