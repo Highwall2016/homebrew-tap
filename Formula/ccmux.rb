@@ -12,7 +12,7 @@ class Ccmux < Formula
   on_macos do
     on_arm do
       url "https://github.com/Highwall2016/homebrew-tap/releases/download/v0.1.4/ccmux-0.1.4-darwin-arm64.tar.gz"
-      sha256 "95f096b7cac9bd088641798975edbffc0dc4758a851b6e52cf57c6c00ef76d3f"
+      sha256 "362033060c7bd15090bae217a4e38aa4f6ecf5ba70f59f328337872aef7ca21a"
     end
     on_intel do
       url "https://github.com/Highwall2016/homebrew-tap/releases/download/v0.1.4/ccmux-0.1.4-darwin-amd64.tar.gz"
