@@ -6,7 +6,7 @@ class Ccmux < Formula
   homepage "https://ccmux.com"
   # Update url and sha256 after running scripts/make-release.sh
   url "https://github.com/Highwall2016/ccmux/releases/download/v0.1.0/ccmux-0.1.0.tar.gz"
-  sha256 "REPLACE_WITH_SHA256_FROM_MAKE_RELEASE"
+  sha256 "de39c33dc22acbb54855cd2708b2ad84c7f9e5a121f41ff2a0169f3b4d91f74f"
   license "MIT"
   head "https://github.com/Highwall2016/ccmux.git", branch: "main"
 
