@@ -1,12 +1,20 @@
 # Highwall2016/homebrew-tap
 
-Homebrew tap for [ccmux](https://github.com/Highwall2016/ccmux) — control tmux sessions from your phone.
+Homebrew tap for tools by [@Highwall2016](https://github.com/Highwall2016).
 
-## Install
+## Packages
+
+| Name | Description | Install |
+|------|-------------|---------|
+| [ccmux](https://github.com/Highwall2016/ccmux) | Control tmux sessions from your phone | `brew install ccmux` |
+| [opensoundsource](https://github.com/Highwall2016/open-soundsource) | Per-app audio routing for macOS | `brew install opensoundsource` |
+
+## Usage
 
 ```sh
 brew tap Highwall2016/tap
 brew install ccmux
+brew install opensoundsource
 ```
 
 This installs two binaries:
