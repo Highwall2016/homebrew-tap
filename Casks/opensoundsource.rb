@@ -1,8 +1,8 @@
 cask "opensoundsource" do
-  version "0.1.0"
-  sha256 "3393bab48b699cce6fbaf2a0fd2fdcf7e97cb8fd391b06385793c22d35c1b523"
+  version "0.1.1"
+  sha256 "a4ca28a56c22c0acbf78a8f7f8d60839ee756ecfa69c16dce0db53d4c5c6879d"
 
-  url "https://github.com/Highwall2016/open-soundsource/releases/download/v#{version}/OpenSoundSource-#{version}.zip"
+  url "https://github.com/Highwall2016/homebrew-tap/releases/download/opensoundsource-v#{version}/OpenSoundSource-#{version}.zip"
   name "OpenSoundSource"
   desc "Per-app audio routing for macOS"
   homepage "https://github.com/Highwall2016/open-soundsource"
