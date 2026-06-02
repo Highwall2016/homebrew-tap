@@ -1,6 +1,6 @@
 cask "opensoundsource" do
-  version "0.1.3"
-  sha256 "50dc1b86526662f70ed2c59562a81e0a88c09a3e00b117512a82187502eb5b61"
+  version "0.1.4"
+  sha256 "a809cbff30927edda8b2f69d615aeffc34e012af46d794ddb7e76d03c3eeb7e9"
 
   url "https://github.com/Highwall2016/homebrew-tap/releases/download/opensoundsource-v#{version}/OpenSoundSource-#{version}.zip"
   name "OpenSoundSource"
