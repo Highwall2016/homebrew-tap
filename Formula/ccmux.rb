@@ -5,24 +5,25 @@ class Ccmux < Formula
   desc "Control tmux sessions from your phone"
   homepage "https://ccmux.com"
   license "MIT"
-  version "0.1.22"
+  version "0.1.23"
 
   # Pre-compiled binaries — no Go required.
   # Update urls and sha256s after running scripts/make-release.sh.
   on_macos do
     on_arm do
-      url "https://github.com/Highwall2016/homebrew-tap/releases/download/v0.1.22/ccmux-0.1.22-darwin-arm64.tar.gz"
-      sha256 "f5cfbeb06cfd9eaa22972a13429dfcdb180cc3d436d04ce4e460dd129c7a6c9d"
+      url "https://github.com/Highwall2016/homebrew-tap/releases/download/v0.1.23/ccmux-0.1.23-darwin-arm64.tar.gz"
+      sha256 "68fa63337ec13865517f97aea51987fd9c4e64f20105e4d5612dfff2cdab312a"
     end
     on_intel do
-      url "https://github.com/Highwall2016/homebrew-tap/releases/download/v0.1.22/ccmux-0.1.22-darwin-amd64.tar.gz"
-      sha256 "6ea7d814599842d04ec600f273802aa37582fa0a65c5a32883590033374d5981"
+      url "https://github.com/Highwall2016/homebrew-tap/releases/download/v0.1.23/ccmux-0.1.23-darwin-amd64.tar.gz"
+      sha256 "a2ba0831cdb3ce9a0f2cc7a28653f1d03eacbf44575a5e23b7bf5ef17f8ab073"
     end
   end
 
   def install
     bin.install "ccmux"
     bin.install "ccmux-agent"
+    prefix.install "CCMux.app" if OS.mac? && File.directory?("CCMux.app")
   end
 
   # ccmux-agent runs in the background and streams your terminal sessions to
@@ -46,6 +47,12 @@ class Ccmux < Formula
 
            This opens a browser to sign in and starts ccmux-agent automatically.
            Your device will then appear in the ccmux mobile app.
+
+      Desktop app:
+        open #{opt_prefix}/CCMux.app
+
+      To show it in /Applications:
+        ln -sfn #{opt_prefix}/CCMux.app /Applications/CCMux.app
 
       ─────────────────────────────────────────────────────
       Optional — auto-start the agent on every login:
