@@ -14,15 +14,19 @@ Homebrew tap for tools by [@Highwall2016](https://github.com/Highwall2016).
 ```sh
 brew tap Highwall2016/tap
 brew install ccmux
+brew install --cask ccmux
 brew install opensoundsource
 ```
 
-This installs two binaries:
+`brew install ccmux` installs the CLI, agent, and service support. `brew install --cask ccmux` installs the desktop app into `/Applications` and links the bundled CLI tools.
 
-| Binary | Role |
-|--------|------|
+The ccmux packages include:
+
+| Artifact | Role |
+|----------|------|
 | `ccmux` | CLI — spawn, kill, list, and attach to sessions |
 | `ccmux-agent` | Background daemon — streams your terminal to the mobile app |
+| `CCMux.app` | Desktop dashboard installed in the formula keg or `/Applications` via cask |
 
 ## Get started
 
@@ -31,6 +35,12 @@ ccmux auth login
 ```
 
 Opens a browser to sign in with your ccmux account, registers your machine as a device, and starts `ccmux-agent` automatically. Your device will then appear in the ccmux mobile app.
+
+Launch the desktop app with:
+
+```sh
+open "$(brew --prefix ccmux)/CCMux.app"
+```
 
 ## Auto-start on login (optional)
 
