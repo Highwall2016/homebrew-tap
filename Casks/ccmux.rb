@@ -1,9 +1,9 @@
 cask "ccmux" do
   arch arm: "arm64", intel: "amd64"
 
-  version "--help"
-  sha256 arm:   "25f52886145fcbf878372271fc8d8287a781889cc4e00ce378ca288413bc13ea",
-         intel: "18c5b23fbc39749463c70cf2c340d6b0b228f9639d26c1948c36a3eebfb8bf3a"
+  version "0.1.24"
+  sha256 arm:   "d82978a0af2d75a2bf4d0e94e691d5f036030fa9211fe83c7eb8306e78a4e1bf",
+         intel: "87194020769834a4baad4dfa57f1418ce9ffa0a17f7ea0dfa8a59e1c6833ea67"
 
   url "https://github.com/Highwall2016/homebrew-tap/releases/download/v#{version}/ccmux-#{version}-darwin-#{arch}.tar.gz"
   name "CCMux"
