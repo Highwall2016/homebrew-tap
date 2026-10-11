@@ -5,18 +5,18 @@ class Ccmux < Formula
   desc "Control tmux sessions from your phone"
   homepage "https://ccmux.com"
   license "MIT"
-  version "0.1.30"
+  version "0.1.31"
 
   # Pre-compiled binaries — no Go required.
   # Update urls and sha256s after running scripts/make-release.sh.
   on_macos do
     on_arm do
-      url "https://github.com/Highwall2016/homebrew-tap/releases/download/v0.1.30/ccmux-0.1.30-darwin-arm64.tar.gz"
-      sha256 "fcaa874d29af769ffae86ca728eeca08cbd9a1ce82bbc2a3b00349f149fcdcd6"
+      url "https://github.com/Highwall2016/homebrew-tap/releases/download/v0.1.31/ccmux-0.1.31-darwin-arm64.tar.gz"
+      sha256 "aed5f55d8350521ae1af85cc244abb445d36c9ff12f5d0fbe8af9f0d0e7a0144"
     end
     on_intel do
-      url "https://github.com/Highwall2016/homebrew-tap/releases/download/v0.1.30/ccmux-0.1.30-darwin-amd64.tar.gz"
-      sha256 "235b5e0a4cccb6e201d54c2f2d0d24022fd4e2541e3f38d814c7a157ac5da9cc"
+      url "https://github.com/Highwall2016/homebrew-tap/releases/download/v0.1.31/ccmux-0.1.31-darwin-amd64.tar.gz"
+      sha256 "5cc8d45e2b2aee2d82470cf4cc7d6c82fce44d14cbbe34c58deb878f8772a503"
     end
   end
 
